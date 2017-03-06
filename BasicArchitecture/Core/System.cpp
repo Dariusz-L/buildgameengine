@@ -18,8 +18,10 @@ void System::OnStart() {
 }
 
 void System::Update() {
-	for (auto m : _managers)
-		m->Update();
+	while (_exit) {
+		for (auto m : _managers)
+			m->Update();
+	}
 }
 
 void System::OnQuit() {
